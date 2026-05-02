@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  /* Light Mode Variables */
+  --background: #F4F6F8;
+  --foreground: #0A0A0A;
+  --accent: #2563EB; /* A nice vibrant blue for light mode */
+  --accent-hover: #1D4ED8;
+  --card: #FFFFFF;
+  --border: #E2E8F0;
+  --muted: #64748B;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.05);
+}
+
+.dark {
+  /* Dark Mode Variables (Ultra-Premium Tech) */
+  --background: #050505;
+  --foreground: #FFFFFF;
+  --accent: #00F0FF;
+  --accent-hover: #00D0FF;
+  --card: #0A0A0A;
+  --border: #1F1F1F;
+  --muted: #888888;
+  --glass-bg: rgba(10, 10, 10, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.05);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.neon-gradient-text {
+  background: linear-gradient(90deg, var(--accent), #7000FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.neon-glow {
+  box-shadow: 0 0 40px rgba(var(--accent), 0.15);
+}
+
+.bento-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .bento-card {
+  background: linear-gradient(145deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.4) 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.bento-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.dark .bento-card:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.05);
 }
