@@ -137,7 +137,7 @@ export default function Hero() {
           <div className="relative z-10 w-[300px] h-[400px] lg:w-[350px] lg:h-[450px] rounded-2xl overflow-hidden glass p-2 group">
             <div className="w-full h-full relative rounded-xl overflow-hidden bg-[var(--card)]">
               <Image
-                src="/developer.png"
+                src="/dev1.png"
                 alt="Jensen Omega"
                 fill
                 className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700"
