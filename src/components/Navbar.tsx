@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 import { Home, Layers, MessageSquare, Moon, Sun, User } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -21,11 +23,20 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const getHref = (name: string) => {
+    const isHome = pathname === "/";
+    if (name === "Home") return isHome ? "#home" : "/#home";
+    if (name === "About") return isHome ? "#about" : "/#about";
+    if (name === "Projects") return isHome ? "#projects" : "/projects";
+    if (name === "Contacts") return isHome ? "#contacts" : "/#contacts";
+    return "/";
+  };
+
   const navItems = [
-    { name: "Home", icon: <Home size={18} /> },
-    { name: "About", icon: <User size={18} /> },
-    { name: "Projects", icon: <Layers size={18} /> },
-    { name: "Contacts", icon: <MessageSquare size={18} /> },
+    { name: "Home", icon: <Home size={18} />, href: getHref("Home") },
+    { name: "About", icon: <User size={18} />, href: getHref("About") },
+    { name: "Projects", icon: <Layers size={18} />, href: getHref("Projects") },
+    { name: "Contacts", icon: <MessageSquare size={18} />, href: getHref("Contacts") },
   ];
 
   return (
@@ -56,7 +67,7 @@ export default function Navbar() {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href={`#${item.name.toLowerCase()}`}
+              href={item.href}
               className="relative group hover:text-[var(--foreground)] transition-colors duration-300 flex items-center gap-1.5"
             >
               <span className="text-[var(--accent)]">{item.icon}</span>
@@ -75,7 +86,7 @@ export default function Navbar() {
             </button>
           )}
           <Link
-            href="#contacts"
+            href={getHref("Contacts")}
             className="hidden md:block px-6 py-2 rounded-full border border-[var(--border)] hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white dark:hover:text-black transition-all duration-300 font-semibold text-sm"
           >
             Let's Talk

@@ -63,12 +63,16 @@ export default function StickySocials() {
     >
       <a
         href="https://github.com/tonmoytr"
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-[var(--muted)] hover:text-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
       >
         <GithubIcon />
       </a>
       <a
         href="https://www.linkedin.com/in/tr-tonmoy-roy/"
+        target="_blank"
+        rel="noopener noreferrer"
         className="text-[var(--muted)] hover:text-[var(--accent)] hover:-translate-y-1 transition-all duration-300"
       >
         <LinkedinIcon />

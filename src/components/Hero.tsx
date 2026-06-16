@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const TypewriterText = () => {
-  const lines = ["FRONT-END DEVELOPER", "CODER", "PROBLEM SOLVER."];
+  const lines = [" DEVELOPER", "CODER", "PROBLEM SOLVER"];
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

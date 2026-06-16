@@ -92,12 +92,16 @@ export default function Contact() {
             </a> */}
             <a
               href="https://www.linkedin.com/in/tr-tonmoy-roy/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[var(--foreground)] transition-colors"
             >
               LinkedIn
             </a>
             <a
               href="https://github.com/tonmoytr"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-[var(--foreground)] transition-colors"
             >
               GitHub

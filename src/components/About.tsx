@@ -138,6 +138,8 @@ export default function About() {
 
           <motion.a
             href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-white font-bold rounded-full hover:bg-[var(--accent-hover)] transition-colors duration-300 shadow-[0_0_20px_rgba(var(--accent-rgb),0.3)]"
