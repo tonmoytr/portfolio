@@ -46,10 +46,8 @@ export default function ProjectsPage() {
             className="flex flex-col gap-6"
           >
             <div className="flex items-center gap-2">
-              <Link href="/" passHref legacyBehavior>
-                <a className="text-sm font-mono tracking-widest text-[var(--muted)] hover:text-[var(--accent)] transition-colors flex items-center gap-1">
-                  &larr; HOME
-                </a>
+              <Link href="/" className="text-sm font-mono tracking-widest text-[var(--muted)] hover:text-[var(--accent)] transition-colors flex items-center gap-1">
+                &larr; HOME
               </Link>
               <span className="text-[var(--muted)]">/</span>
               <span className="text-sm font-mono tracking-widest text-[var(--accent)] font-semibold">

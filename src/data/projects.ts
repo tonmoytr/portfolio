@@ -8,15 +8,15 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    title: "BloodBridge",
-    description:
-      "Bridging Hope to Life | A digital lifeline connecting verified donors with patients in critical need. One tap, one connection, infinite impact",
-    image: "/images/1.png",
-    tags: ["Next.js", "Tailwind", "MongoDB", "Mongoose"],
-    github: "https://github.com/tonmoytr/blood-bridge",
-    live: "https://blood-bridge-lac.vercel.app/",
-  },
+  // {
+  //   title: "BloodBridge",
+  //   description:
+  //     "Bridging Hope to Life | A digital lifeline connecting verified donors with patients in critical need. One tap, one connection, infinite impact",
+  //   image: "/images/1.png",
+  //   tags: ["Next.js", "Tailwind", "MongoDB", "Mongoose"],
+  //   github: "https://github.com/tonmoytr/blood-bridge",
+  //   live: "https://blood-bridge-lac.vercel.app/",
+  // },
   {
     title: "DocAppointment",
     description:

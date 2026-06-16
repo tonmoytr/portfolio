@@ -2,8 +2,17 @@
 
 import clsx from "clsx";
 import { motion } from "framer-motion";
-import { Home, Layers, MessageSquare, Moon, Sun, User } from "lucide-react";
+import {
+  Briefcase,
+  Home,
+  Layers,
+  MessageSquare,
+  Moon,
+  Sun,
+  User,
+} from "lucide-react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -27,6 +36,7 @@ export default function Navbar() {
     const isHome = pathname === "/";
     if (name === "Home") return isHome ? "#home" : "/#home";
     if (name === "About") return isHome ? "#about" : "/#about";
+    if (name === "Experience") return isHome ? "#experience" : "/#experience";
     if (name === "Projects") return isHome ? "#projects" : "/projects";
     if (name === "Contacts") return isHome ? "#contacts" : "/#contacts";
     return "/";
@@ -35,8 +45,17 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", icon: <Home size={18} />, href: getHref("Home") },
     { name: "About", icon: <User size={18} />, href: getHref("About") },
+    {
+      name: "Experience",
+      icon: <Briefcase size={18} />,
+      href: getHref("Experience"),
+    },
     { name: "Projects", icon: <Layers size={18} />, href: getHref("Projects") },
-    { name: "Contacts", icon: <MessageSquare size={18} />, href: getHref("Contacts") },
+    {
+      name: "Contacts",
+      icon: <MessageSquare size={18} />,
+      href: getHref("Contacts"),
+    },
   ];
 
   return (
@@ -59,7 +78,13 @@ export default function Navbar() {
           className="text-xl font-bold tracking-tighter flex items-center gap-2"
         >
           <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[var(--accent)] to-purple-500 flex items-center justify-center text-white text-xs">
-            TR
+            <Image
+              src="/dev1.png"
+              width={40}
+              height={40}
+              className="rounded-full"
+              alt="Ivey Solutions logo"
+            />
           </div>
           TONMOY<span className="text-[var(--accent)]"></span>
         </Link>

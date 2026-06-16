@@ -39,8 +39,8 @@ export default function Projects() {
 
         {/* See All Projects Button */}
         <div className="flex justify-center mt-20">
-          <Link href="/projects" passHref legacyBehavior>
-            <motion.a
+          <Link href="/projects">
+            <motion.span
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white font-bold rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(var(--accent-rgb),0.1)] hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.4)] cursor-pointer"
@@ -61,7 +61,7 @@ export default function Projects() {
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </motion.a>
+            </motion.span>
           </Link>
         </div>
       </div>
